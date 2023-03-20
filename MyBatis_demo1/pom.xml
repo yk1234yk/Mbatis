@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--project标签 ：根标签：表示对当前工程进行配置、管理 -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!-- modelVersion 标签：从maven2 开始就固定是4.0.0   -->
+    <!--    代表当前pom.xml 所采用的标签结构-->
+    <modelVersion>4.0.0</modelVersion>
+    <!--    坐标信息
+               groupId标签：坐标向量之一:代表公司或组织开发的某一个项目
+               artifactId:坐标向量之一:代表项目下的某一个模块
+               version:坐标向量之一:代表当前模块版本
+               packing:打包方式
+                       jar:生成jar包，说明这是一个java工程 默认
+                       war:生成war包，说明这是一个wab工程
+                       pom:说明这个工程用来管理其他工程的工程
+                       -->
+    <groupId>org.example</groupId>
+    <artifactId>MyBatis_demo1</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <!--配置具体依赖信息-->
+    <dependencies>
+        <!-- Mybatis核心 -->
+        <!--<dependency> 标签:配置一个具体的依赖信息-->
+        <dependency>
+            <!--坐标信息:导入哪个jar包，就配置它的坐标信息即可-->
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.5.11</version>
+        </dependency>
+        <!-- junit测试 -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <!--scope标签:配置当前依赖的范围            -->
+            <scope>test</scope>
+        </dependency>
+        <!-- MySQL驱动 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.30</version>
+        </dependency>
+        <!-- log4j日志 -->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+    </dependencies>
+
+
+    <!--    在Maven中定义属性值-->
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+</project>
